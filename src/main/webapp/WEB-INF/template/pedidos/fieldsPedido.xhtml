@@ -1,0 +1,50 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <p:panelGrid columns="4" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo, rotulo, campo">
+        <p:outputLabel value="Número" for="num" />
+        <p:inputText id="num" value="12345"/>
+
+        <p:outputLabel value="Data de criação" for="data"/>
+        <p:calendar id="data" size="10" pattern="dd/MM/yyyy"/>
+
+        <p:outputLabel value="Orçamento" for="orcamento"/>
+        <p:inputText id="orcamento" value="Orçamento"/>
+
+        <p:outputLabel value="Vendedor" for="vend"/>
+        <p:selectOneMenu id="vend">
+            <f:selectItem itemLabel="Selecione"/>
+            <f:selectItem itemLabel="Deusimar Menezes"/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="Cliente" for="client"/>
+        <p:autoComplete id="client" size="40" dropdown="true">
+            <f:selectItem itemLabel=""/>
+        </p:autoComplete>
+
+        <p:outputLabel value="Forma de pagamento" for="pgto"/>
+        <p:selectOneMenu id="pgto">
+            <f:selectItem itemLabel="Selecione"/>
+            <f:selectItem itemLabel="Boleto bancário"/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="Valor do frete" for="frete"/>
+        <p:inputText id="frete" size="10" maxlength="10"/>
+
+        <p:outputLabel value="SubTotal" style="font-weight: bold"/>
+        <h:outputText id="subTotal" value="R$ 0,00" style="font-weight: bold"/>
+
+        <p:outputLabel value="Valor de desconto" for="valorDesconto"/>
+        <p:inputText id="valorDesconto" size="10" maxlength="10"/>
+
+        <p:outputLabel value="Total do pedido" style="font-weight: bold"/>
+        <h:outputText id="total" value="R$ 0,00" style="font-weight: bold; font-size: 1.1em"/>
+    </p:panelGrid>
+
+
+</ui:composition>

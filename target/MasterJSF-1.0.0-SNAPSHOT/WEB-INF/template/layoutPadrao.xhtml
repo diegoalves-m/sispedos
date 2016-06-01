@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta content="text/html" http-equiv="Content-Type" charset="UTF-8" />
+        <title><ui:insert name="titulo">Sistema de pedidos</ui:insert></title>
+        <h:outputStylesheet library="css" name="sistema.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <div>
+                <h:link>
+                    <h:graphicImage library="images" name="logoDiego.png" />
+                </h:link>
+            </div>
+        </header>
+        <div id="conteudo">
+            <ui:insert name="corpo"/>
+        </div>
+        <p:separator style="margin-top: 20px" />
+        <footer>
+            Diego Alves &copy; Todos os direitos reservados
+        </footer>
+    </h:body>
+</html>
+
