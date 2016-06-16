@@ -7,15 +7,14 @@ package com.developer.diegoalves.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author Diego Alves
  */
-@ManagedBean
-@RequestScoped
+
+@Named
 public class CadastroPedidoBean {
     
     private List<Integer> itens;

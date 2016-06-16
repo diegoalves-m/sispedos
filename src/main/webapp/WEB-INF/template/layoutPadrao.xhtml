@@ -9,6 +9,7 @@
         <meta content="text/html" http-equiv="Content-Type" charset="UTF-8" />
         <title><ui:insert name="titulo">Sistema de pedidos</ui:insert></title>
         <h:outputStylesheet library="css" name="sistema.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
         <h:outputScript library="js" name="maskMoney_min.js"/>
     </h:head>
     <h:body>
@@ -21,11 +22,33 @@
             </f:facet>
         </p:ajaxStatus>
         <header>
-            <div>
-                <h:link>
-                    <h:graphicImage library="images" name="logoDiego.png" />
+            <div style="width: 100px">
+                <h:link outcome="/index">
+                    <h1 id="nameSis">SisPedos</h1>
                 </h:link>
             </div>
+            <div style="float: right; margin-right: 100px">
+                <span style="float: left; height: 30px; line-height: 30px; margin-right: 60px">
+                    Olá Usuario
+                </span>
+                <h:form style="display: inline-block">
+                    <p:menubar styleClass="menu-Sistema">
+                        <p:submenu label="Cadastros">
+                            <p:menuitem value="Clientes" />
+                            <p:menuitem value="Usuários" />
+                            <p:separator/>
+                            <p:menuitem value="Categorias"/>
+                            <p:menuitem value="Produtos" outcome="/produtos/pesquisaProdutos"/>
+                        </p:submenu>
+                        <p:submenu label="Pedidos">
+                            <p:menuitem value="Novo pedido" outcome="/pedidos/cadastroPedido" />
+                            <p:menuitem value="Pesquisa pedido" outcome="/pedidos/pesquisaPedidos" />
+                        </p:submenu>
+                        <p:menuitem value="Sair" />
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div style="clear: both"></div>
         </header>
         <div id="conteudo">
             <ui:insert name="corpo"/>

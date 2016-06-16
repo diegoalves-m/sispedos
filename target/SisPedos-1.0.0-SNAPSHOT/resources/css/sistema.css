@@ -14,9 +14,19 @@ body {
 header {
     padding: 5px 0px;
     margin-bottom: 20px;
-    background-color: black;
+    background-color: slategray;
     color: #fff;
     box-shadow: 0px 2px 2px #ccc;
+}
+
+#nameSis {
+    font-size: 25px;
+    width: 100px;
+    color: white;
+}
+
+#nameSis > a {
+    text-decoration: blink;
 }
 
 header > div {
