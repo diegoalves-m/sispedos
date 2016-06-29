@@ -1,5 +1,6 @@
 package com.developer.diegoalves.util.jsf;
 
+import com.developer.diegoalves.pedidovenda.service.NegocioException;
 import java.io.IOException;
 import java.util.Iterator;
 import javax.faces.FacesException;
@@ -10,6 +11,8 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ExceptionQueuedEvent;
 import javax.faces.event.ExceptionQueuedEventContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
@@ -17,6 +20,8 @@ import javax.faces.event.ExceptionQueuedEventContext;
  */
 public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 
+    private static Log log = LogFactory.getLog(JsfExceptionHandler.class);
+    
     private ExceptionHandler wrapped;
 
     public JsfExceptionHandler(ExceptionHandler excepWrapeed) {
@@ -36,16 +41,26 @@ public class JsfExceptionHandler extends ExceptionHandlerWrapper {
             ExceptionQueuedEvent event = events.next();
             ExceptionQueuedEventContext context = (ExceptionQueuedEventContext) event.getSource();
 
-            Throwable throwable = context.getException();
-
+            Throwable exception = context.getException();
+            NegocioException negocioException = getNegocioException(exception);
+            boolean handled = false;
             try {
-                if (throwable instanceof ViewExpiredException) {
+                if (exception instanceof ViewExpiredException) {
+                    handled = true;
                     redirect("/");
+                } else if (negocioException != null) {
+                    handled = true;
+                    FacesUtil.addErrorMessage(negocioException.getMessage());
+                } else {
+                    handled = true;
+                    log.error("Erro de sistema: ", exception);
+                    redirect("/error.xhtml");
                 }
             } finally {
-                events.remove();
+                if (handled) {
+                    events.remove();
+                }
             }
-
         }
         getWrapped().handle();
     }
@@ -62,6 +77,15 @@ public class JsfExceptionHandler extends ExceptionHandlerWrapper {
         } catch (IOException e) {
             throw new FacesException(e);
         }
+    }
+
+    private NegocioException getNegocioException(Throwable exception) {
+        if (exception instanceof NegocioException) {
+            return (NegocioException) exception;
+        } else if (exception.getCause() != null) {
+            return getNegocioException(exception.getCause());
+        }
+        return null;
     }
 
 }

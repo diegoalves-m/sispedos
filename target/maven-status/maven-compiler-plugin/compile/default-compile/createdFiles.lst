@@ -1,3 +1,8 @@
+com\developer\diegoalves\util\jsf\JsfExceptionHandler.class
+com\developer\diegoalves\pedidovenda\service\NegocioException.class
 com\developer\diegoalves\controller\PesquisaProdutosBean.class
-com\developer\diegoalves\controller\CadastroPedidoBean.class
+com\developer\diegoalves\util\jsf\JsfExceptionHandlerFactory.class
 com\developer\diegoalves\controller\PesquisaPedidosBean.class
+com\developer\diegoalves\controller\CadastroProdutoBean.class
+com\developer\diegoalves\util\jsf\FacesUtil.class
+com\developer\diegoalves\controller\CadastroPedidoBean.class

@@ -9,7 +9,7 @@
     <p:toolbar>
         <p:toolbarGroup>
             <p:button value="Novo" outcome="/pedidos/cadastroPedido"/>
-            <p:commandButton value="Salvar"/>
+            <p:commandButton value="Salvar" action="#{cadastroPedidoBean.save}"/>
         </p:toolbarGroup>
         <p:toolbarGroup align="right">
             <p:commandButton value="Emitir"/>
