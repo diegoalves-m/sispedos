@@ -13,7 +13,12 @@ import javax.inject.Named;
 @SessionScoped
 public class CadastroProdutoBean implements Serializable {
     
-    public void save() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public void save() {
         throw new RuntimeException("Test exception");
     }
     
