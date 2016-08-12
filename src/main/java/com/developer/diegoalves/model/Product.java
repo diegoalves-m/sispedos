@@ -1,24 +1,35 @@
-
 package com.developer.diegoalves.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  *
  * @author Diego Alves
  */
+@Entity
 public class Product implements Serializable {
-    
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private Long id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(nullable = false, length = 100)
     private String name;
+    @Column(nullable = false, length = 50)
     private String sku;
+    @Column(nullable = false, name = "unit_value", precision = 10, scale = 2)
     private BigDecimal unitValue;
+    @Column(nullable = false, name = "amount_stock", length = 30)
     private Integer amountStock;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 50)
     private Category category;
 
     public Product() {
@@ -71,8 +82,30 @@ public class Product implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
-    
-    
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Product other = (Product) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+
 }

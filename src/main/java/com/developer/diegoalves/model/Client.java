@@ -1,4 +1,3 @@
-
 package com.developer.diegoalves.model;
 
 import java.io.Serializable;
@@ -21,19 +20,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "client")
 public class Client implements Serializable {
-    
+
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	@Id
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    @Id
     @GeneratedValue
     private Long id;
-	@Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String name;
-	@Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String email;
-	@Column(nullable = false, length = 14)
+    @Column(nullable = false, length = 14)
     private String cpf;
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Address> addresses;
@@ -116,5 +115,5 @@ public class Client implements Serializable {
         }
         return true;
     }
-    
+
 }

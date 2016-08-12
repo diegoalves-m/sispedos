@@ -1,29 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.developer.diegoalves.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Diego Alves
  */
+@Entity
 public class ItemOrder implements Serializable {
-    
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private Long id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(nullable = false, length = 3)
     private Integer amount;
+    @Column(name = "unitary_value", nullable = false, precision = 10, scale = 2)
     private BigDecimal unitaryValue;
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
-    private Order order;
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Orderp orderp;
 
     public ItemOrder() {
     }
@@ -60,12 +67,12 @@ public class ItemOrder implements Serializable {
         this.product = product;
     }
 
-    public Order getOrder() {
-        return order;
+    public Orderp getOrder() {
+        return orderp;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(Orderp order) {
+        this.orderp = order;
     }
 
     @Override
@@ -92,5 +99,5 @@ public class ItemOrder implements Serializable {
         }
         return true;
     }
-    
+
 }

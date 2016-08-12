@@ -20,23 +20,23 @@ import javax.persistence.Table;
 public class Address implements Serializable {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	@Id
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    @Id
     @GeneratedValue
     private Long id;
-	@Column(nullable = false, length = 150)
+    @Column(nullable = false, length = 150)
     private String place;
-	@Column(length = 150)
+    @Column(length = 150)
     private String complement;
-	@Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     private String number;
-	@Column(nullable = false, length = 60)
+    @Column(nullable = false, length = 60)
     private String city;
-	@Column(nullable = false, length = 60)
+    @Column(nullable = false, length = 60)
     private String uf;
-	@Column(nullable = false, length = 9)
+    @Column(nullable = false, length = 9)
     private String cep;
     @ManyToOne
     @JoinColumn(nullable = false)
