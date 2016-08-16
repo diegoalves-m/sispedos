@@ -7,26 +7,26 @@
     
     <p:panelGrid columns="4" style="width: 100%" columnClasses="rotulo, campo, rotulo, campo">
         <p:outputLabel value="Data de entrega" for="entrega" />
-        <p:calendar id="entrega" size="10" pattern="dd/MM/yyyy" />
+        <p:calendar id="entrega" size="10" pattern="dd/MM/yyyy" value="#{cadastroPedidoBean.orderp.deliveryDate}" />
         <p:spacer/>
         <p:spacer/>
         <p:outputLabel value="Logradouro" for="logra"/>
-        <p:inputText id="logra" size="50" />
+        <p:inputText id="logra" size="50" value="#{cadastroPedidoBean.orderp.deliveryAddress.publicPlace}" />
         
         <p:outputLabel value="Número" for="num"/>
-        <p:inputText id="num" size="5" />
+        <p:inputText id="num" size="5" value="#{cadastroPedidoBean.orderp.deliveryAddress.number}" />
         
         <p:outputLabel value="Complemento" for="comple"/>
-        <p:inputText id="comple" size="50" />
+        <p:inputText id="comple" size="50" value="#{cadastroPedidoBean.orderp.deliveryAddress.complement}" />
         
         <p:outputLabel value="Cidade" for="cidade"/>
-        <p:inputText id="cidade" size="20" />
+        <p:inputText id="cidade" size="20" value="#{cadastroPedidoBean.orderp.deliveryAddress.city}" />
         
         <p:outputLabel value="Estado" for="estado"/>
-        <p:inputText id="estado" size="20"/>
+        <p:inputText id="estado" size="20" value="#{cadastroPedidoBean.orderp.deliveryAddress.uf}"/>
         
         <p:outputLabel value="CEP" for="cep"/>
-        <p:inputText id="cep" size="10"/>
+        <p:inputText id="cep" size="10" value="#{cadastroPedidoBean.orderp.deliveryAddress.cep}"/>
         
     </p:panelGrid>
 

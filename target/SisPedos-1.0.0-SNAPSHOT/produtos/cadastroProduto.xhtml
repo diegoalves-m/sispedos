@@ -10,6 +10,8 @@
     <ui:define name="corpo">
         <h:form>
             <h1>Novo produto</h1>
+            
+            <p:messages autoUpdate="true" closable="true"/>
 
             <p:toolbar>
                 <p:toolbarGroup>
@@ -23,10 +25,10 @@
             </p:toolbar>
             <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
                 <p:outputLabel value="SKU" for="sku"/>
-                <p:inputText id="sku" size="20" maxlength="20"/>
+                <p:inputText id="sku" size="20" maxlength="20" value="#{cadastroProdutoBean.product.sku}"/>
 
                 <p:outputLabel value="Nome" for="nome"/>
-                <p:inputText id="nome" size="60" maxlength="80"/>
+                <p:inputText id="nome" size="60" maxlength="80" value="#{cadastroProdutoBean.product.name}"/>
 
                 <p:outputLabel value="Categoria" for="categoria"/>
                 <p:selectOneMenu id="categoria">
@@ -34,15 +36,19 @@
                 </p:selectOneMenu>
 
                 <p:outputLabel value="Subcategoria" for="subcategoria"/>
-                <p:selectOneMenu id="subcategoria">
+                <p:selectOneMenu id="subcategoria" value="#{cadastroProdutoBean.product.category}">
                     <f:selectItem itemLabel="Selecione a subcategoria"/>
                 </p:selectOneMenu>
 
                 <p:outputLabel value="Valor unitário" for="valorunitario"/>
-                <p:inputText id="valorunitario" size="10" maxlength="10" styleClass="moeda"/>
+                <p:inputText id="valorunitario" size="10" maxlength="10" styleClass="moeda"
+                             value="#{cadastroProdutoBean.product.unitValue}">
+                    <f:convertNumber maxFractionDigits="2" minFractionDigits="2"/>
+                </p:inputText>
 
                 <p:outputLabel value="Estoque" for="estoque"/>
-                <p:inputText id="estoque" size="10" maxlength="4"/>
+                <p:inputText id="estoque" size="10" maxlength="5"
+                             value="#{cadastroProdutoBean.product.amountStock}"/>
             </p:panelGrid>
         </h:form>
     </ui:define>

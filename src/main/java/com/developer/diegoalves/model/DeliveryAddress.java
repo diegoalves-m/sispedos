@@ -3,6 +3,8 @@ package com.developer.diegoalves.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -28,6 +30,7 @@ public class DeliveryAddress implements Serializable {
     public DeliveryAddress() {
     }
 
+    @NotBlank @Size(max = 150)
     public String getPublicPlace() {
         return publicPlace;
     }
@@ -36,6 +39,7 @@ public class DeliveryAddress implements Serializable {
         this.publicPlace = publicPlace;
     }
 
+    @NotBlank @Size(max = 20)
     public String getNumber() {
         return number;
     }
@@ -44,6 +48,7 @@ public class DeliveryAddress implements Serializable {
         this.number = number;
     }
 
+    @Size(max = 50)
     public String getComplement() {
         return complement;
     }
@@ -52,6 +57,7 @@ public class DeliveryAddress implements Serializable {
         this.complement = complement;
     }
 
+    @NotBlank @Size(max = 60)
     public String getCity() {
         return city;
     }
@@ -60,6 +66,7 @@ public class DeliveryAddress implements Serializable {
         this.city = city;
     }
 
+    @NotBlank @Size(max = 60)
     public String getUf() {
         return uf;
     }
@@ -68,6 +75,7 @@ public class DeliveryAddress implements Serializable {
         this.uf = uf;
     }
 
+    @NotBlank @Size(max = 9)
     public String getCep() {
         return cep;
     }

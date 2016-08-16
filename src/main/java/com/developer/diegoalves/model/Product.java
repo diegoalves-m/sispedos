@@ -9,6 +9,11 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -43,6 +48,8 @@ public class Product implements Serializable {
         this.id = id;
     }
 
+    @NotBlank
+    @Size(max = 80)
     public String getName() {
         return name;
     }
@@ -51,6 +58,7 @@ public class Product implements Serializable {
         this.name = name;
     }
 
+    @NotBlank
     public String getSku() {
         return sku;
     }
@@ -59,6 +67,7 @@ public class Product implements Serializable {
         this.sku = sku;
     }
 
+    @NotNull
     public BigDecimal getUnitValue() {
         return unitValue;
     }
@@ -67,6 +76,7 @@ public class Product implements Serializable {
         this.unitValue = unitValue;
     }
 
+    @NotNull @Min(0) @Max(9999)
     public Integer getAmountStock() {
         return amountStock;
     }
@@ -75,6 +85,7 @@ public class Product implements Serializable {
         this.amountStock = amountStock;
     }
 
+    @NotNull
     public Category getCategory() {
         return category;
     }

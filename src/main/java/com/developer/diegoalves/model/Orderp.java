@@ -18,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -71,6 +72,7 @@ public class Orderp implements Serializable {
         this.id = id;
     }
 
+    @NotNull
     public Date getCreationDate() {
         return creationDate;
     }
@@ -87,6 +89,7 @@ public class Orderp implements Serializable {
         this.observation = observation;
     }
 
+    @NotNull
     public Date getDeliveryDate() {
         return deliveryDate;
     }
@@ -95,6 +98,7 @@ public class Orderp implements Serializable {
         this.deliveryDate = deliveryDate;
     }
 
+    @NotNull
     public BigDecimal getFreightValue() {
         return freightValue;
     }
@@ -103,6 +107,7 @@ public class Orderp implements Serializable {
         this.freightValue = freightValue;
     }
 
+    @NotNull
     public BigDecimal getDiscountValue() {
         return discountValue;
     }
@@ -111,6 +116,7 @@ public class Orderp implements Serializable {
         this.discountValue = discountValue;
     }
 
+    @NotNull
     public BigDecimal getTotalValue() {
         return totalValue;
     }
@@ -119,6 +125,7 @@ public class Orderp implements Serializable {
         this.totalValue = totalValue;
     }
 
+    @NotNull
     public StatusOrder getStatusOrder() {
         return statusOrder;
     }
@@ -127,6 +134,7 @@ public class Orderp implements Serializable {
         this.statusOrder = statusOrder;
     }
 
+    @NotNull
     public FormPayment getFormPayment() {
         return formPayment;
     }
@@ -135,6 +143,7 @@ public class Orderp implements Serializable {
         this.formPayment = formPayment;
     }
 
+    @NotNull
     public Userc getSalesman() {
         return salesman;
     }
@@ -143,6 +152,7 @@ public class Orderp implements Serializable {
         this.salesman = salesman;
     }
 
+    @NotNull
     public Client getClient() {
         return client;
     }
