@@ -3,11 +3,9 @@ package com.developer.diegoalves.controller;
 
 import com.developer.diegoalves.model.DeliveryAddress;
 import com.developer.diegoalves.model.Orderp;
-import com.developer.diegoalves.pedidovenda.service.NegocioException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 

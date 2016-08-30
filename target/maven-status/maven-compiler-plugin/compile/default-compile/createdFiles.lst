@@ -1,7 +1,9 @@
 com\developer\diegoalves\controller\PesquisaProdutosBean.class
 com\developer\diegoalves\model\ItemOrder_.class
+com\developer\diegoalves\jpa\EntityManagerProducer.class
 com\developer\diegoalves\util\jsf\JsfExceptionHandlerFactory.class
 com\developer\diegoalves\model\Product.class
+com\developer\diegoalves\validation\SKU.class
 com\developer\diegoalves\model\Orderp.class
 com\developer\diegoalves\controller\CadastroProdutoBean.class
 com\developer\diegoalves\model\Address.class
@@ -10,8 +12,10 @@ com\developer\diegoalves\controller\CadastroPedidoBean.class
 com\developer\diegoalves\model\Client_.class
 com\developer\diegoalves\model\DeliveryAddress.class
 com\developer\diegoalves\model\Product_.class
+com\developer\diegoalves\repository\Categories.class
 com\developer\diegoalves\model\StatusOrder.class
 com\developer\diegoalves\model\Orderp_.class
+com\developer\diegoalves\pedidovenda\service\ProductService.class
 com\developer\diegoalves\controller\PesquisaPedidosBean.class
 com\developer\diegoalves\model\FormPayment.class
 com\developer\diegoalves\model\PeopleType.class
@@ -19,8 +23,10 @@ com\developer\diegoalves\util\jsf\JsfExceptionHandler.class
 com\developer\diegoalves\model\ItemOrder.class
 com\developer\diegoalves\model\Client.class
 com\developer\diegoalves\model\DeliveryAddress_.class
+com\developer\diegoalves\model\Category_.class
 com\developer\diegoalves\util\jsf\FacesUtil.class
 com\developer\diegoalves\model\Userc.class
 com\developer\diegoalves\pedidovenda\service\NegocioException.class
+com\developer\diegoalves\converter\CategoryConverter.class
 com\developer\diegoalves\model\Category.class
 com\developer\diegoalves\model\Address_.class

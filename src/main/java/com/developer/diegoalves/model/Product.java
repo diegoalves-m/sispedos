@@ -1,5 +1,6 @@
 package com.developer.diegoalves.model;
 
+import com.developer.diegoalves.validation.SKU;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -9,6 +10,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -33,8 +36,9 @@ public class Product implements Serializable {
     private BigDecimal unitValue;
     @Column(nullable = false, name = "amount_stock", length = 30)
     private Integer amountStock;
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 50)
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     public Product() {
@@ -58,7 +62,7 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    @NotBlank
+    @NotBlank @SKU //@Pattern(regexp = "([a-zA-Z]{2}\\d{4,18})?")
     public String getSku() {
         return sku;
     }
@@ -85,7 +89,7 @@ public class Product implements Serializable {
         this.amountStock = amountStock;
     }
 
-    @NotNull
+    //@NotNull
     public Category getCategory() {
         return category;
     }
