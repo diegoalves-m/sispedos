@@ -2,22 +2,26 @@
 package com.developer.diegoalves.pedidovenda.service;
 
 import com.developer.diegoalves.model.Product;
-import com.developer.diegoalves.repository.Products;
-import java.io.Serializable;
+import com.developer.diegoalves.repository.ProductImpl;
+import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author Diego Alves
  */
 @Stateless
-public class ProductService implements Serializable {
+@Local(ProductImpl.class)
+public class ProductService implements ProductImpl {
     
-    private Products products;
+    @PersistenceContext
+    private EntityManager entityManager;
     
-    public Product save(Product product) {
-        products.add(product);
-        return product;
+    @Override
+    public void save(Product product) {
+        entityManager.persist(product);
     }
     
 }

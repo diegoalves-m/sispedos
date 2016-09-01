@@ -13,7 +13,7 @@ import javax.persistence.EntityManager;
  */
 public class Categories implements Serializable {
     
-    @Inject
+  
     private EntityManager manager;
     
     public Category byId(Long id) {

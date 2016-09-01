@@ -10,5 +10,5 @@
         <property name="URL" value="jdbc:postgresql://localhost:5432/pedidosdb"/>
         <property name="driverClass" value="org.postgresql.Driver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="java:app/PostgreSQL" object-type="user" pool-name="post-gre-sql_pedidosdb_postgresPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/systemdb" object-type="user" pool-name="post-gre-sql_pedidosdb_postgresPool"/>
 </resources>

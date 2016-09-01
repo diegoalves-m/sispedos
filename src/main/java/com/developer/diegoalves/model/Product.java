@@ -36,7 +36,6 @@ public class Product implements Serializable {
     private BigDecimal unitValue;
     @Column(nullable = false, name = "amount_stock", length = 30)
     private Integer amountStock;
-    @Column(nullable = false, length = 50)
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
