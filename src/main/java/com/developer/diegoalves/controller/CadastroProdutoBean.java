@@ -8,8 +8,8 @@ import com.developer.diegoalves.util.jsf.FacesUtil;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -24,7 +24,7 @@ public class CadastroProdutoBean implements Serializable {
     private Product product;
     private Category categoryF;
     
-    @EJB
+    @Inject
     private ProductService productService;
     
     private List<Category> mainCategories;
